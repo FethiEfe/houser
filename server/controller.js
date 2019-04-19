@@ -11,8 +11,8 @@ module.exports = {
 
     postItem: (req, res) => {
         const dbInstance = req.app.get("db")
-
-        dbInstance.post_item([req.body.name, req.body.address, req.body.city, req.body.state, req.body.zip])
+        console.log(req.body)
+        dbInstance.post_item([req.body.name, req.body.address, req.body.city, req.body.state, req.body.zip, req.body.img,  req.body.mortgageAmount, req.body.monthlyRent])
         .then(result => {
             res.status(200).json(result)
         }

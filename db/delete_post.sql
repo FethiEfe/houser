@@ -1,2 +1,2 @@
-DELETE FROM houses WHERE id = $1;
-SELECT * FROM houses;
+DELETE FROM wizard WHERE id = $1;
+SELECT * FROM wizard;
