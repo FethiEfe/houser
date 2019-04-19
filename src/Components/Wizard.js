@@ -10,7 +10,7 @@ export default class Wizard extends Component{
             address: "",
             city: "",
             state: "",
-            zipcode: 0,
+            zip: 0,
         }
         this.handleName = this.handleName.bind(this)
     }
@@ -21,17 +21,7 @@ export default class Wizard extends Component{
         })
     }
     
-    postItem = () => {
-        axios
-        .post("/api/houses", {name: this.state.name, 
-                              address: this.state.address, 
-                              city: this.state.city, 
-                              state:this.state.state, 
-                              zipcode: this.state.zipcode}
-        )
-        
-    }
-
+   
     handleAddress = (e) => {
         this.setState({
             address: e.target.value
@@ -59,6 +49,17 @@ export default class Wizard extends Component{
         })
     }
     
+    postItem = () => {
+        axios
+        .post("/api/houses", {name: this.state.name, 
+                              address: this.state.address, 
+                              city: this.state.city, 
+                              state:this.state.state, 
+                              zip: this.state.zipcode}
+        )
+        
+    }
+
     render(){
         return(
             <div>

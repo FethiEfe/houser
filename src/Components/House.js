@@ -1,4 +1,6 @@
 import React, {Component} from "react"
+import axios from "axios"
+import {Link} from "react-router-dom"
 
 export default class House extends Component{
     constructor(){
@@ -6,8 +8,13 @@ export default class House extends Component{
         this.state = {
 
         }
+        this.deletePost = this.deletePost.bind(this)
     }
     
+    deletePost(id){
+        axios
+        .delete(`/api/houses/${id}`)
+    }  
 
     render(){
         return(
@@ -18,7 +25,9 @@ export default class House extends Component{
                 <h4>City: {this.props.city}</h4>
                 <h4>State: {this.props.state}</h4>
                 <h4>Zip: {this.props.zip}</h4>
-                <button>Delete</button>
+                <Link to = "/">
+                    <button onClick = {() => this.deletePost(this.props.id)}>Delete</button>
+                </Link>
                          
             </div>
         )

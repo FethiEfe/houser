@@ -25,7 +25,7 @@ export default class Dashboard extends Component{
 
     render(){
         const houseListings = this.state.houses.map((element, index) => {
-            return <House key = {index}
+            return <House id = {element.id}
                           name = {element.name}
                           address= {element.address}
                           city ={element.city}
@@ -34,7 +34,7 @@ export default class Dashboard extends Component{
                           />
         }   
         )
-        
+
         return(
             <div>
 
